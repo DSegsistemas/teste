@@ -1,0 +1,42 @@
+    .print-label {
+        width: 189px; /* 50mm in pixels at 96 DPI */
+        height: 94px; /* 25mm in pixels at 96 DPI */
+        border: 2px solid #ccc;
+        padding: 5px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #888;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        line-height: normal;
+    }
+    .company-logo img {
+        max-width: 63px;
+        height: auto;
+    }
+
+    .print-label p, .print-label span {
+        margin: 0px 0;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: normal;
+    }
+
+    .print-label-number {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .pdf-print-label{
+        width: 189px; /* 50mm in pixels at 96 DPI */
+        height: 94px; /* 25mm in pixels at 96 DPI */
+        border: 2px solid #ccc;
+        padding: 5px;
+        font-family: Arial Unicode MS, Cyberbit;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #888;
+        background: white;
+    }

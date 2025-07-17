@@ -1,0 +1,204 @@
+{
+    "sEmptyTable": "Nenhum registro encontrado",
+    "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+    "sInfoPostFix": "",
+    "sInfoThousands": ".",
+    "sLengthMenu": "_MENU_ resultados por página",
+    "sLoadingRecords": "Carregando...",
+    "sProcessing": "Processando...",
+    "sZeroRecords": "Nenhum registro encontrado",
+    "sSearch": "Pesquisar",
+    "oPaginate": {
+        "sNext": "Próximo",
+        "sPrevious": "Anterior",
+        "sFirst": "Primeiro",
+        "sLast": "Último"
+    },
+    "oAria": {
+        "sSortAscending": ": Ordenar colunas de forma ascendente",
+        "sSortDescending": ": Ordenar colunas de forma descendente"
+    },
+    "select": {
+        "rows": {
+            "_": "Selecionado %d linhas",
+            "0": "Nenhuma linha selecionada",
+            "1": "Selecionado 1 linha"
+        }
+    },
+    "buttons": {
+        "copy": "Copiar",
+        "colvis": "Visibilidade",
+        "collection": "Coleção",
+        "colvisRestore": "Restaurar visibilidade",
+        "copyKeys": "Pressione ctrl ou u2318 + C para copiar os dados da tabela para a área de transferência do sistema. <br /> <br /> Para cancelar, clique nesta mensagem ou pressione escape.",
+        "copySuccess": {
+            "1": "Copiada 1 linha para a área de transferência",
+            "_": "Copiadas %ds linhas para a área de transferência"
+        },
+        "copyTitle": "Copiar para a área de transferência",
+        "csv": "CSV",
+        "excel": "Excel",
+        "pageLength": {
+            "-1": "Mostrar todas as linhas",
+            "_": "Mostrar %d linhas"
+        },
+        "pdf": "PDF",
+        "print": "Imprimir",
+        "renameState": "Renomear",
+        "updateState": "Atualizar",
+        "createState": "Criar Estado",
+        "removeAllStates": "Remover todos os Estados",
+        "removeState": "Remover",
+        "savedStates": "Estados Salvos",
+        "stateRestore": "Estado %d"
+    },
+    "searchBuilder": {
+        "add": "Adicionar Condição",
+        "button": {
+            "0": "Construtor de Pesquisa",
+            "_": "Construtor de Pesquisa (%d)"
+        },
+        "clearAll": "Limpar Tudo",
+        "condition": "Condição",
+        "conditions": {
+            "date": {
+                "after": "Depois",
+                "before": "Antes",
+                "between": "Entre",
+                "empty": "Vazio",
+                "equals": "Igual",
+                "notBetween": "Não Entre",
+                "notEmpty": "Não Vazio",
+                "not": "Não"
+            },
+            "number": {
+                "between": "Entre",
+                "empty": "Vazio",
+                "equals": "Igual",
+                "gt": "Maior Que",
+                "gte": "Maior ou Igual a",
+                "lt": "Menor Que",
+                "lte": "Menor ou Igual a",
+                "notBetween": "Não Entre",
+                "notEmpty": "Não Vazio",
+                "not": "Não"
+            },
+            "string": {
+                "contains": "Contém",
+                "empty": "Vazio",
+                "endsWith": "Termina Com",
+                "equals": "Igual",
+                "notEmpty": "Não Vazio",
+                "startsWith": "Começa Com",
+                "not": "Não",
+                "notContains": "Não Contém",
+                "notStartsWith": "Não Começa Com",
+                "notEndsWith": "Não Termina Com"
+            },
+            "array": {
+                "not": "Não",
+                "equals": "Igual",
+                "empty": "Vazio",
+                "contains": "Contém",
+                "notEmpty": "Não Vazio",
+                "without": "Sem"
+            }
+        },
+        "data": "Data",
+        "deleteTitle": "Excluir regra de filtragem",
+        "leftTitle": "Critérios Externos",
+        "logicAnd": "E",
+        "logicOr": "Ou",
+        "rightTitle": "Critérios Internos",
+        "title": {
+            "0": "Construtor de Pesquisa",
+            "_": "Construtor de Pesquisa (%d)"
+        },
+        "value": "Valor"
+    },
+    "searchPanes": {
+        "clearMessage": "Limpar Tudo",
+        "collapse": {
+            "0": "Painéis de Pesquisa",
+            "_": "Painéis de Pesquisa (%d)"
+        },
+        "count": "{total}",
+        "countFiltered": "{shown} ({total})",
+        "emptyPanes": "Nenhum Painel de Pesquisa",
+        "loadMessage": "Carregando Painéis de Pesquisa",
+        "title": "Filtros Ativos - %d",
+        "showMessage": "Mostrar Todos",
+        "collapseMessage": "Recolher Todos"
+    },
+    "infoThousands": ".",
+    "datetime": {
+        "previous": "Anterior",
+        "next": "Próximo",
+        "hours": "Horas",
+        "minutes": "Minutos",
+        "seconds": "Segundos",
+        "unknown": "-",
+        "amPm": [
+            "AM",
+            "PM"
+        ],
+        "months": {
+            "0": "Janeiro",
+            "1": "Fevereiro",
+            "10": "Novembro",
+            "11": "Dezembro",
+            "2": "Março",
+            "3": "Abril",
+            "4": "Maio",
+            "5": "Junho",
+            "6": "Julho",
+            "7": "Agosto",
+            "8": "Setembro",
+            "9": "Outubro"
+        },
+        "weekdays": [
+            "Dom",
+            "Seg",
+            "Ter",
+            "Qua",
+            "Qui",
+            "Sex",
+            "Sáb"
+        ]
+    },
+    "editor": {
+        "close": "Fechar",
+        "create": {
+            "button": "Novo",
+            "title": "Criar novo registro",
+            "submit": "Criar"
+        },
+        "edit": {
+            "button": "Editar",
+            "title": "Editar registro",
+            "submit": "Atualizar"
+        },
+        "remove": {
+            "button": "Remover",
+            "title": "Remover registro",
+            "submit": "Remover",
+            "confirm": {
+                "_": "Tem certeza que deseja excluir %d linhas?",
+                "1": "Tem certeza que deseja excluir 1 linha?"
+            }
+        },
+        "error": {
+            "system": "Ocorreu um erro no sistema (<a target=\"\" rel=\"\ nofollow\" href=\"\">Mais informações</a>)."
+        },
+        "multi": {
+            "title": "Múltiplos Valores",
+            "info": "Os itens selecionados contêm valores diferentes para este campo. Para editar e definir todos os itens para este campo com o mesmo valor, clique ou toque aqui, caso contrário, eles manterão seus valores individuais.",
+            "restore": "Desfazer Alterações",
+            "noMulti": "Este campo pode ser editado individualmente, mas não como parte de um grupo."
+        }
+    },
+    "decimal": ",",
+    "thousands": "."
+}

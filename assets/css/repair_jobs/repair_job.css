@@ -1,0 +1,13 @@
+.table.items2 thead, .table.items3 thead {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+.table.items2 thead th, .table.items3 thead th {
+    border-right: 1px solid #e2e8f0;
+}
+input.form-control.input-sm {
+    min-width: 18vw;
+}
+input#task-single-standard_time {
+    text-align: right;
+}

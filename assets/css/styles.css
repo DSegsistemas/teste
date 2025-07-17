@@ -1,0 +1,818 @@
+.picture input[type="file"], .picture_secondary input[type="file"] {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0 !important;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.picture-src{
+    width: auto;
+    height: 88px;
+}
+.d-block {
+    display: block !important;
+}
+
+img.manufacturer-img {
+    height: 50px;
+    width: 100px;
+    object-fit: cover;
+}
+
+
+.dropzone, .dropzone * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.dropzone-previews {
+    box-sizing: border-box;
+}
+
+#images_old_preview {
+    box-sizing: border-box;
+}
+
+.dz-preview.dz-file-preview .dz-details {
+    opacity: 1;
+}
+.dz-preview .dz-details {
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    font-size: 13px;
+    min-width: 100%;
+}
+
+/* Estilos para botão de acesso à nota fiscal */
+#workshop_invoice_link_btn {
+    margin: 15px 0;
+    z-index: 1000;
+}
+
+#workshop_invoice_link_btn .btn-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#workshop_invoice_link_btn .btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+#workshop_invoice_link_btn .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+}
+
+#workshop_invoice_link_btn .fa-file-invoice {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Estilos para versão PDF */
+#workshop_invoice_link_btn.pdf-version {
+    border: 2px solid #007bff;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+#workshop_invoice_link_btn.pdf-version p {
+    margin: 0;
+}
+
+#workshop_invoice_link_btn.pdf-version .title {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+#workshop_invoice_link_btn.pdf-version .url {
+    font-size: 12px;
+    color: #6c757d;
+    word-break: break-all;
+    font-family: monospace;
+    background-color: #e9ecef;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #workshop_invoice_link_btn .btn-primary {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    #workshop_invoice_link_btn.pdf-version {
+        margin: 15px 0;
+        padding: 12px;
+    }
+    
+    #workshop_invoice_link_btn.pdf-version .title {
+        font-size: 14px;
+    }
+    
+    #workshop_invoice_link_btn.pdf-version .url {
+        font-size: 11px;
+    }
+    max-width: 100%;
+    padding: 2em 1em;
+    text-align: center;
+    color: rgba(0, 0, 0, .9);
+    line-height: 150%;
+}
+.dz-details, .dz-details:hover {
+    background: #2563eb;
+    opacity: 1;
+    color: #fff;
+    height: 120px;
+}
+
+.dz-preview .dz-details .dz-filename:not(:hover) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.dz-preview .dz-details .dz-filename {
+    white-space: nowrap;
+}
+.dz-preview .dz-remove {
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    border: none;
+}
+.dz-details, .dz-details:hover {
+    background: #2563eb;
+    opacity: 1;
+    color: #fff;
+    height: 120px;
+}
+
+.dz-details {
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    font-size: 13px;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 2em 1em;
+    text-align: center;
+    color: rgba(0,0,0,.9);
+    line-height: 150%;
+}
+
+.dz-progress {
+    opacity: 1;
+    z-index: 1000;
+    pointer-events: none;
+    position: absolute;
+    height: 16px;
+    left: 50%;
+    top: 50%;
+    margin-top: -8px;
+    width: 80px;
+    margin-left: -40px;
+    background: rgba(255,255,255,.9);
+    -webkit-transform: scale(1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dz-upload {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: green;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: width .3s ease-in-out;
+}
+
+.dz-error-message {
+    pointer-events: none;
+    z-index: 1000;
+    position: absolute;
+    display: block;
+    display: none;
+    opacity: 0;
+    -webkit-transition: opacity .3s ease;
+    -moz-transition: opacity .3s ease;
+    -ms-transition: opacity .3s ease;
+    -o-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+    border-radius: 8px;
+    font-size: 13px;
+    top: 130px;
+    left: -10px;
+    width: 140px;
+    background: #be2626;
+    background: linear-gradient(to bottom,#be2626,#a92222);
+    padding: .5em 1.2em;
+    color: #fff;
+}
+
+.dz-success-mark {
+    position: absolute;
+    display: none;
+    top: 30px;
+    width: 54px;
+    height: 58px;
+    left: 50%;
+    margin-left: -27px;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 500;
+    margin-top: -27px;
+}
+
+.dz-error-mark {
+    position: absolute;
+    display: none;
+    top: 30px;
+    width: 54px;
+    height: 58px;
+    left: 50%;
+    margin-left: -27px;
+    pointer-events: none;
+    opacity: 0;
+    margin-top: -27px;
+    z-index: 500;
+}
+
+.dz-remove {
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    border: none;
+}
+
+.dz-preview {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 0.5em;
+    vertical-align: top;
+    min-height: 100px;
+}
+
+.dz-preview .dz-image {
+    border-radius: 20px;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    display: block;
+    z-index: 10;
+}
+
+.property-view {
+    position: static;
+    transform: none;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    max-height: 60vh;
+
+}
+
+img.img.img-rounded.img-thumbnail.property-thumbnail, video.img.img-rounded.img-thumbnail.property-thumbnail {
+    position: static;
+    transform: none;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 93.5%;
+    max-height: 15.75vh;
+}
+
+video.img.img-rounded.img-thumbnail.property-thumbnail {
+    min-height: 144px;
+}
+
+.epl-gallery-remaining--desktop {
+    display: flex !important;
+}
+.epl-gallery-remaining {
+    display: none;
+}
+.epl-gallery-remaining {
+    position: absolute;
+    background: rgba(0, 0, 0, .3);
+    top: 0;
+    left: 0;
+    width: 93.5%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2.2em;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.epl-gallery-item--desktop {
+    display: block;
+}
+
+.epl-gallery-item {
+    position: relative;
+}
+.dz-active{
+    opacity: 1 !important;
+}
+.kb-search .form-control-feedback {
+    left: 6px !important;
+    top: 10px;
+    font-size: 16px;
+}
+
+.list-status h3 {
+    margin-top: 0px;
+}
+
+.list-status:last-child {
+    border-right: 0px;
+}
+
+.list-status a {
+    border: 1px solid #eeeeee;
+    padding: 5px 15px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.list-status a.active {
+    background: #f9fafb;
+}
+
+/* Estilos removidos - usando padrões do PerfexCRM */
+.tw-justify-space-around {
+    justify-content: space-around
+}
+
+.overflow-y-scroll-50{
+    overflow-y:scroll;
+    min-height: 0vh;
+    max-height: 50vh;
+}
+
+.overflow-y-scroll-80{
+    overflow-y:scroll;
+    min-height: 0vh;
+    max-height: 80vh;
+}
+.color_74C0FC{
+    background-color: #74C0FC;
+}
+
+/* Estilos para cards do Workshop seguindo padrões PerfexCRM */
+.widget-drilldown-item {
+    background: #fff;
+    border: 1px solid #e4e6ea;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.widget-drilldown-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.widget-drilldown-item-inner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.widget-drilldown-item-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.widget-drilldown-item-content {
+    flex: 1;
+}
+
+.widget-drilldown-item-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.2;
+}
+
+.widget-drilldown-item-content span {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Cores dos ícones */
+.text-success { color: #28a745 !important; }
+.text-info { color: #17a2b8 !important; }
+.text-primary { color: #007bff !important; }
+.text-warning { color: #ffc107 !important; }
+.text-danger { color: #dc3545 !important; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .widget-drilldown-item {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    
+    .widget-drilldown-item-inner {
+        gap: 10px;
+    }
+    
+    .widget-drilldown-item-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .widget-drilldown-item-content h3 {
+        font-size: 20px;
+    }
+    
+    .widget-drilldown-item-content span {
+        font-size: 12px;
+    }
+}
+
+/* Estilos para filtros fixos de comissão */
+.commission-filters {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.commission-filters:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
+}
+
+.commission-filters .panel-heading {
+    background: transparent;
+    border: none;
+    padding-bottom: 20px;
+}
+
+.commission-filters .panel-heading h5 {
+    color: #495057;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+}
+
+.commission-filters .panel-heading i {
+    color: #007bff;
+    margin-right: 8px;
+}
+
+.commission-filters .panel-body {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.commission-filters h5 {
+    color: #495057;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.commission-filters .form-group {
+    margin-bottom: 15px;
+}
+
+.commission-filters .btn {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.commission-filters .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.commission-filters .btn-outline-primary:hover,
+.commission-filters .btn-outline-primary.active {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.commission-filters .btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.commission-filters .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+.commission-filters .input-group {
+    margin-bottom: 10px;
+}
+
+.commission-filters .input-group-text {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+    color: #495057;
+}
+
+.commission-filters .form-control {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 12px 16px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    border-color: #ced4da;
+}
+
+.commission-filters .form-control:hover {
+    border-color: #007bff;
+    box-shadow: 0 2px 4px rgba(0,123,255,0.1);
+}
+
+.commission-filters .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.15);
+    background: #ffffff;
+}
+
+.commission-filters .form-group label {
+    color: #495057;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.commission-filters .btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.commission-filters .btn-default {
+    background: #ffffff;
+    border-color: #e9ecef;
+    color: #495057;
+}
+
+.commission-filters .btn-default:hover {
+    background: #f8f9fa;
+    border-color: #007bff;
+    color: #007bff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,123,255,0.15);
+}
+
+.filter-info {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 15px;
+    color: #1565c0;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(21,101,192,0.1);
+}
+
+.filter-info strong {
+    color: #0d47a1;
+}
+
+/* Responsividade para filtros */
+@media (max-width: 768px) {
+    .commission-filters {
+        padding: 15px;
+    }
+    
+    .commission-filters .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .commission-filters .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .commission-filters .col-md-6,
+    .commission-filters .col-md-4,
+    .commission-filters .col-md-3 {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Animações para os cards de comissão */
+.commission-card {
+    transition: all 0.3s ease;
+}
+
+.commission-card.updating {
+    opacity: 0.7;
+    transform: scale(0.98);
+}
+
+.commission-card.updated {
+    animation: cardUpdate 0.5s ease;
+}
+
+@keyframes cardUpdate {
+    0% {
+        transform: scale(0.98);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilos para integração do menu de faturas - Design moderno e limpo */
+.sidebar-menu li[data-menu="workshop"] ul li a[href*="invoices"] {
+    position: relative;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, rgba(155, 89, 182, 0.05) 100%) !important;
+    border-left: 4px solid #3498db !important;
+    border-radius: 0 8px 8px 0 !important;
+    margin: 2px 0 !important;
+    padding: 10px 15px !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.1);
+}
+
+.sidebar-menu li[data-menu="workshop"] ul li a[href*="invoices"]:hover {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(155, 89, 182, 0.1) 100%) !important;
+    border-left-color: #2980b9 !important;
+    transform: translateX(3px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.sidebar-menu li[data-menu="workshop"] ul li.active a[href*="invoices"] {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.2) 0%, rgba(155, 89, 182, 0.15) 100%) !important;
+    border-left-color: #2c3e50 !important;
+    font-weight: 600;
+    color: #2c3e50 !important;
+    box-shadow: 0 6px 16px rgba(52, 152, 219, 0.25);
+}
+
+.sidebar-menu li[data-menu="workshop"] ul li a[href*="invoices"] i {
+    color: #3498db !important;
+    margin-right: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li[data-menu="workshop"] ul li a[href*="invoices"]:hover i {
+    color: #2980b9 !important;
+    transform: scale(1.1);
+}
+
+.sidebar-menu li[data-menu="workshop"] ul li.active a[href*="invoices"] i {
+    color: #2c3e50 !important;
+}
+
+/* Melhorar o espaçamento geral do menu workshop */
+.sidebar-menu li[data-menu="workshop"] ul {
+    padding: 5px 0;
+}
+
+.sidebar-menu li[data-menu="workshop"] ul li {
+    margin: 1px 0;
+}
+
+/* Efeito de destaque para todo o menu workshop quando faturas estiver ativo */
+.sidebar-menu li[data-menu="workshop"].has-active-invoice {
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.1);
+}
+
+/* Animações para os cards */
+.widget-drilldown-item-content h3 {
+    transition: all 0.3s ease;
+}
+
+.widget-drilldown-item-content h3 .fa-spinner {
+    color: #007bff;
+}
+
+/* Estado de loading para cards */
+.commission-card-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.commission-card-loading h3 {
+    color: #6c757d !important;
+}
+
+/* Feedback visual para filtros ativos */
+.commission-filters-active {
+    border-left: 4px solid #007bff;
+    background-color: #f8f9fa;
+}
+
+.commission-filters-active .panel-heading {
+    background-color: #e3f2fd;
+}
+
+/* Estilo para informações de filtro */
+#commission_filter_info {
+    background: #e8f5e8;
+    border: 1px solid #c8e6c9;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #2e7d32;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Animação para aplicação de filtros */
+.applying-filters {
+    position: relative;
+}
+
+.applying-filters::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+}
+
+.applying-filters::before {
+    content: '\f110';
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    font-size: 24px;
+    color: #007bff;
+    animation: fa-spin 1s infinite linear;
+}

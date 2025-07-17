@@ -1,0 +1,693 @@
+/**
+ * ESTILOS PARA O FORMULÁRIO DE EXEMPLO
+ * 
+ * Este arquivo contém estilos específicos para o formulário de exemplo
+ * do sistema de preenchimento automático de formulários.
+ * 
+ * Autor: James - Equipe WORKENTERPRISE
+ * Data: 2024
+ * 
+ * Características:
+ * - Design moderno e responsivo
+ * - Gradientes e sombras suaves
+ * - Animações e transições
+ * - Compatibilidade com Bootstrap 5
+ * - Acessibilidade (WCAG 2.1)
+ */
+
+/* ========================================
+   VARIÁVEIS CSS CUSTOMIZADAS
+   ======================================== */
+:root {
+    /* Cores principais */
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    
+    /* Cores de fundo */
+    --bg-gradient-start: #667eea;
+    --bg-gradient-end: #764ba2;
+    --card-bg: #ffffff;
+    --field-group-bg: #f8f9fa;
+    
+    /* Sombras */
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Bordas */
+    --border-radius: 8px;
+    --border-radius-large: 15px;
+    --border-radius-pill: 25px;
+    
+    /* Espaçamentos */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Transições */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ========================================
+   RESET E BASE
+   ======================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL
+   ======================================== */
+.main-container {
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+/* Efeito de partículas no fundo */
+.main-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* ========================================
+   CARDS E CONTAINERS
+   ======================================== */
+.form-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-heavy);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-header {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    padding: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.form-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-header p {
+    margin: var(--spacing-sm) 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   GRUPOS DE CAMPOS
+   ======================================== */
+.field-group {
+    background: var(--field-group-bg);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.field-group:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.section-title {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.section-title:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.section-title i {
+    margin-right: var(--spacing-sm);
+    font-size: 1.2em;
+}
+
+/* ========================================
+   CAMPOS DE FORMULÁRIO
+   ======================================== */
+.form-control {
+    border-radius: var(--border-radius);
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+    transition: var(--transition-normal);
+    font-size: 1rem;
+    background-color: #fff;
+    position: relative;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.form-control:hover:not(:focus) {
+    border-color: #ced4da;
+    box-shadow: var(--shadow-light);
+}
+
+/* Estados de validação */
+.form-control.is-valid {
+    border-color: var(--success-color);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.94-.94 2.94 2.94L8.5 6.4l.94.94L6.5 10.27z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-control.is-invalid {
+    border-color: var(--danger-color);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6 2.4 2.4m0-2.4L5.8 7'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Labels */
+.form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+}
+
+/* Campos obrigatórios */
+.required-field .form-label::after {
+    content: " *";
+    color: var(--danger-color);
+    font-weight: bold;
+    margin-left: var(--spacing-xs);
+}
+
+/* ========================================
+   CHECKBOXES E RADIO BUTTONS
+   ======================================== */
+.form-check {
+    padding-left: 1.8rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.1rem;
+    margin-left: -1.8rem;
+    border: 2px solid #dee2e6;
+    transition: var(--transition-normal);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-check-label {
+    font-weight: 500;
+    color: #495057;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.form-check-label:hover {
+    color: var(--primary-color);
+}
+
+/* ========================================
+   BOTÕES
+   ======================================== */
+.btn-custom {
+    border-radius: var(--border-radius-pill);
+    padding: 12px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-custom::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-custom:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom:active {
+    transform: translateY(0);
+}
+
+/* Botão primário */
+.btn-primary.btn-custom {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+    color: white;
+}
+
+/* Botão secundário */
+.btn-outline-secondary.btn-custom {
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background: transparent;
+}
+
+.btn-outline-secondary.btn-custom:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* ========================================
+   ALERTAS E MENSAGENS
+   ======================================== */
+.alert {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.alert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: currentColor;
+}
+
+.alert-success {
+    background: linear-gradient(45deg, #d4edda, #c3e6cb);
+    color: #155724;
+}
+
+.alert-heading {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.alert-heading i {
+    margin-right: var(--spacing-sm);
+}
+
+/* ========================================
+   FEEDBACK DE VALIDAÇÃO
+   ======================================== */
+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--danger-color);
+    font-weight: 500;
+}
+
+.valid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--success-color);
+    font-weight: 500;
+}
+
+/* ========================================
+   CONTADOR DE CARACTERES
+   ======================================== */
+.character-counter {
+    font-size: 0.875rem;
+    text-align: right;
+    margin-top: var(--spacing-xs);
+    transition: var(--transition-fast);
+}
+
+.character-counter.text-warning {
+    color: var(--warning-color) !important;
+    font-weight: 600;
+}
+
+.character-counter.text-danger {
+    color: var(--danger-color) !important;
+    font-weight: 700;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* ========================================
+   SEÇÃO DE INSTRUÇÕES
+   ======================================== */
+.instructions-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-large);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    box-shadow: var(--shadow-medium);
+}
+
+.instruction-step {
+    text-align: center;
+    padding: var(--spacing-lg);
+    transition: var(--transition-normal);
+    border-radius: var(--border-radius);
+}
+
+.instruction-step:hover {
+    background: rgba(0, 123, 255, 0.05);
+    transform: translateY(-5px);
+}
+
+.instruction-step i {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-normal);
+}
+
+.instruction-step:hover i {
+    transform: scale(1.1);
+}
+
+.instruction-step h5 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: var(--spacing-sm);
+}
+
+.instruction-step p {
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ========================================
+   LOADING E ESTADOS
+   ======================================== */
+.loading-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Estado desabilitado */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .main-container {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .form-header {
+        padding: var(--spacing-lg);
+    }
+    
+    .form-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .field-group {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .btn-custom {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .instruction-step {
+        padding: var(--spacing-md);
+    }
+    
+    .instruction-step i {
+        font-size: 2.5rem;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 576px) {
+    .main-container {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .form-card {
+        margin: 0 var(--spacing-sm);
+        border-radius: var(--border-radius);
+    }
+    
+    .form-header {
+        padding: var(--spacing-md);
+    }
+    
+    .form-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .form-header p {
+        font-size: 1rem;
+    }
+    
+    .field-group {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+    }
+    
+    .btn-custom {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .d-md-flex {
+        flex-direction: column;
+    }
+    
+    .instruction-step {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .instruction-step i {
+        font-size: 2rem;
+    }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+   ======================================== */
+
+/* Foco visível para navegação por teclado */
+.form-control:focus,
+.btn:focus,
+.form-check-input:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Redução de movimento para usuários sensíveis */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+    .form-control {
+        border-width: 3px;
+    }
+    
+    .btn-custom {
+        border-width: 3px;
+    }
+    
+    .section-title {
+        border-bottom-width: 3px;
+    }
+}
+
+/* ========================================
+   UTILITÁRIOS
+   ======================================== */
+
+/* Texto com gradiente */
+.text-gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* Sombra de texto */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Animação de entrada */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animação de slide */
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ========================================
+   IMPRESSÃO
+   ======================================== */
+@media print {
+    .main-container {
+        background: white !important;
+        padding: 0 !important;
+    }
+    
+    .form-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    .form-header {
+        background: #f8f9fa !important;
+        color: #333 !important;
+    }
+    
+    .btn-custom {
+        display: none !important;
+    }
+    
+    .instruction-step {
+        break-inside: avoid;
+    }
+}
